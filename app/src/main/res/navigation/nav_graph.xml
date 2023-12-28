@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recyclerViewFragment">
+
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.example.weatherapp.RecyclerViewFragment"
+        android:label="fragment_recycler_view"
+        tools:layout="@layout/fragment_recycler_view" >
+        <action
+            android:id="@+id/action_recyclerViewFragment_to_eachItemsFragment"
+            app:destination="@id/eachItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eachItemsFragment"
+        android:name="com.example.weatherapp.EachItemsFragment"
+        android:label="fragment_each_items"
+        tools:layout="@layout/fragment_each_items" >
+        <action
+            android:id="@+id/action_eachItemsFragment_to_recyclerViewFragment"
+            app:destination="@id/recyclerViewFragment" />
+    </fragment>
+</navigation>
